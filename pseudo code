@@ -1,0 +1,21 @@
+// set total distance = distance from left + distance from right
+// create variable current total distance
+// while(total distance = current total distance)
+  // move forward until block is x distance away from front
+  // check distance from left and right
+  // move toward the side that is further away (i.e. if left > right then move left) until the front side sensor of the direction we are moving is clear of obstacles (i.e. if moving left check the front right sensor)
+  // update the current total distance
+
+//set right side wall distance
+// while(true)
+  // move backwards x inches
+  // if current distance from right is less than the right wall distance
+    // turn the rover 90 degrees to the right
+    // break
+
+// while distance from front is less than x
+  // move forward
+
+// grab the object
+
+// .......
