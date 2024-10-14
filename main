@@ -19,7 +19,6 @@
 #define R_in4 10
 
 void setup() {
-  // put your setup code here, to run once:
   pinMode(L_enA, OUTPUT);
   pinMode(L_in1, OUTPUT);
   pinMode(L_in2, OUTPUT);
@@ -38,7 +37,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   goForward();
 }
 
