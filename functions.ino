@@ -1,7 +1,15 @@
+#include "functions.h"
+#include "motor.h"
+
 void forward(){
-  for(Motor motor:motors){
-    motor.go(true);
-  }
+  // for(Motor motor:motors){
+  //   motor.go(true);
+  // }
+  motors[0].go(true);
+  motors[1].go(true);
+  motors[2].go(false);
+  motors[3].go(false);
+
 }
 
 void forward(int speed){
