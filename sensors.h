@@ -7,7 +7,7 @@ class Sensors{
     Sensor frontRight;
     Sensor sLeft;
     Sensor sRight;
-    Sensor back;
+    Sensor tBack;
   public:
     Sensors();
     Sensors(Sensor theFrontL, Sensor theFrontR, Sensor theLeft, Sensor theRight, Sensor theBack);
@@ -21,5 +21,7 @@ class Sensors{
     long left();
 
     long side(bool boolRight);
+
+    long back();
 };
 #endif

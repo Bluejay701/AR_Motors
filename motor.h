@@ -6,9 +6,10 @@ class Motor{
     int en;
     int in1;
     int in2;
+    bool directionCorrect;
   public:
     Motor();
-    Motor(int theEn, int theIn1, int theIn2);
+    Motor(int theEn, int theIn1, int theIn2, bool theDirectionCorrect);
 
     void init();
 

@@ -6,7 +6,7 @@ Sensors::Sensors(Sensor theFrontL, Sensor theFrontR, Sensor theLeft, Sensor theR
   frontRight = theFrontR;
   sLeft = theLeft;
   sRight = theRight;
-  back = theBack;
+  tBack = theBack;
 }
 
 long Sensors::sideTotal(){
@@ -14,7 +14,13 @@ long Sensors::sideTotal(){
 }
 
 long Sensors::front(){
-  return min(frontLeft.readInch(), frontRight.readInch());
+  long readL = frontLeft.readInch();
+  long readR = frontRight.readInch();
+  // Serial.print("Right: ");
+  // Serial.print(readR);
+  // Serial.print(" Left: ");
+  // Serial.println(readL);
+  return min(readL, readR);
 }
 
 long Sensors::right(){
@@ -27,4 +33,8 @@ long Sensors::left(){
 
 long Sensors::side(bool boolRight){
   return boolRight? right() : left();
+}
+
+long Sensors::back(){
+  return tBack.readCm();
 }

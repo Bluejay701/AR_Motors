@@ -2,13 +2,9 @@
 #include "motor.h"
 
 void forward(){
-  // for(Motor motor:motors){
-  //   motor.go(true);
-  // }
-  motors[0].go(true);
-  motors[1].go(true);
-  motors[2].go(false);
-  motors[3].go(false);
+  for(Motor motor:motors){
+    motor.go(true);
+  }
 
 }
 
@@ -19,9 +15,10 @@ void forward(int speed){
 }
 
 void backward(){
-  for(Motor motor:motors){
+ for(Motor motor:motors){
     motor.go(false);
   }
+
 }
 
 void backward(int speed){
