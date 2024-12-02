@@ -2,6 +2,7 @@
 #include "sensor.h"
 #include "sensors.h"
 #include "functions.h"
+#include <Servo.h>
 
 const long FrontStoppingDistance = 15;
 const long SideStoppingDistance = 8;
@@ -9,6 +10,12 @@ const long SideSensorError = 0.15; //15% error compensation for side total dista
 const int DrivingSpeed = 140;
 const int SensorDelayTime = 250;
 const int MotorDelayTime = 1000;
+
+//new servo motors for claw
+const int servoLPin = 39;
+const int servoRPin = 37;
+Servo servoL;
+Servo servoR;
 
 //bad senosrs: back, front right
 //good: front left, right
@@ -36,6 +43,9 @@ void setup(){
   // Serial.println("test");
   totalDistance = sensors.sideTotal();
 
+  //servo motors
+  servoL.attach(servoLPin);
+  servoR.attach(servoRPin);
 }
 
 void loop() {
@@ -83,5 +93,11 @@ void loop() {
   }
 
   //Starts from back of course
+
+  //To close claw from open position
+  servoL.write(30);
+  delay(1000);    
+  servoR.write(-30);
+  delay(1000);
   
 }
